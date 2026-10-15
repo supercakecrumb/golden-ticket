@@ -13,9 +13,7 @@ def index():
 @csrf.exempt
 def ticket():
     if request.method == 'POST':
-        log.info(request.form)
         nt = request.form['nt']
-        log.info(f'ticket-number = {nt}')
     return render_template('ticket.html', title='Билет', csrf=csrf)
 
 @app.route('/about')
